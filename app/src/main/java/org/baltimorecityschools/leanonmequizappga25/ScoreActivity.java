@@ -18,6 +18,7 @@ public class ScoreActivity extends AppCompatActivity {
     TextView scoreTV;
     Intent incomingIntent;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

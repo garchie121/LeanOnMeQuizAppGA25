@@ -12,13 +12,14 @@
         android:layout_height="wrap_content"
         android:src="@drawable/testday" /> <!-- reference your image here -->
 
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/q1TV"
         android:textSize="24sp"
-        android:text="My favorite Movie is Lean on Me."
-    />
+        android:text="@string/q1"
+        />
 
     <LinearLayout
         android:layout_width="match_parent"

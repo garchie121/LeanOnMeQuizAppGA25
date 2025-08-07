@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     Question currentQ;
     Question[] questions;
     boolean userResponse;
-
+    ImageView myImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,13 +45,14 @@ public class MainActivity extends AppCompatActivity {
         trueBTN = (Button) findViewById(R.id.trueBTN);
         falseBTN = (Button) findViewById(R.id.falseBTN);
         qMsg = " ";
-                score = 0;
+        score = 0;
+        myImageView = (ImageView) findViewById(R.id.myImageView);
 
-        q1 = new Question("Lean on Me was filed in New York in 1993?", false);
-        q2 = new Question(" Morgan Freeman was the main Character of the movie?", true);
-        q3 = new Question("Ms Barrett wanted the Mayor to fire Mr. Clark in the Movie?", true);
-        q4 = new Question("The high School name was Patterson High School?", false);
-        q5 = new Question("The state wanted to take control of the school, if test scores did not improve?", true);
+        q1 = new Question("Lean on Me was filed in New York in 1993?", false, R.drawable.leanonmecover);
+        q2 = new Question(" Morgan Freeman was the main Character of the movie?", true,R.drawable.morganfreeman);
+        q3 = new Question("Ms Barrett wanted the Mayor to fire Mr. Clark in the Movie?", true,R.drawable.meanlady);
+        q4 = new Question("The high School name was Patterson High School?", false, R.drawable.studentquit);
+        q5 = new Question("The state wanted to take control of the school, if test scores did not improve?", true,R.drawable.statetakeover);
         questions = new Question[]{q1, q2, q3, q4, q5};
         currentIndex = 0;
         currentQ = questions[currentIndex];
@@ -100,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
                 if (currentIndex < questions.length - 1) {
                     currentIndex++;
                     currentQ = questions[currentIndex];
+                    myImageView.setImageResource(currentQ.getImageid());
                     q1TV.setText(currentQ.getqPrompt());
                 } else {
                     Intent myIntent = new Intent(MainActivity.this, ScoreActivity.class);

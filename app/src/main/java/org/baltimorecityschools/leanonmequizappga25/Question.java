@@ -3,21 +3,31 @@ package org.baltimorecityschools.leanonmequizappga25;
 public class Question {
     private String qPrompt;
     private boolean correctAnswer;
+    private int imageid;
 
+    public Question(String qPrompt, boolean correctAnswer, int imageid) {
+        this.qPrompt = qPrompt;
+        this.correctAnswer = correctAnswer;
+        this.imageid = imageid;
+    }
 
-public Question(String qPrompt, boolean correctAnswer){
-    this.qPrompt = qPrompt;
-    this.correctAnswer = correctAnswer;
-
-}
-public Question() {
+    public Question() {
     qPrompt = "";
     correctAnswer = false;
+    imageid = 0;
 
 }
 
     public String getqPrompt() {
         return qPrompt;
+    }
+
+    public int getImageid() {
+        return imageid;
+    }
+
+    public void setImageid(int imageid) {
+        this.imageid = imageid;
     }
 
     public void setqPrompt(String qPrompt) {
